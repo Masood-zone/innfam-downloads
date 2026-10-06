@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "releases": [
+    {
+      "id": "v1-early-access",
+      "kind": "native",
+      "platform": "android",
+      "title": "iNNFam Android Early Access",
+      "version": "0.1.0",
+      "buildNumber": 2,
+      "tag": "v1-early-access",
+      "publishedAt": "2026-10-04T23:01:50Z",
+      "apkUrl": "https://github.com/Masood-zone/innfam-downloads/releases/download/v1-early-access/innfam-v1.apk",
+      "sizeBytes": 167345753,
+      "sha256": "7ecfdef049aca7611dde7802fb9c8942ecde26de07aff47fa80311af496a78b3",
+      "sourceCommit": null,
+      "legacy": true,
+      "notes": [
+        "Official Android early access build distributed by Gree Software Company.",
+        "Released for testing and sustained everyday use. Features and behaviour may change as tester feedback is reviewed."
+      ]
+    }
+  ]
+}
