@@ -59,6 +59,26 @@
         "Compatible downloaded updates can apply on a subsequent cold launch. The previous Updates screen remains embedded; its simplification is delivered separately through OTA.",
         "Android version 0.1.1, build 6; innfam-v1.1.1.apk is a distribution filename. No additional native permissions were added."
       ]
+    },
+    {
+      "id": "android-0.1.1-build.7",
+      "kind": "native",
+      "platform": "android",
+      "title": "iNNFam Android Early Access - build 7",
+      "version": "0.1.1",
+      "buildNumber": 7,
+      "tag": "android-0.1.1-build.7",
+      "publishedAt": "2026-10-07T07:42:50Z",
+      "apkUrl": "https://github.com/Masood-zone/innfam-downloads/releases/download/android-0.1.1-build.7/innfam-v1.1-inapp.apk",
+      "sizeBytes": 171341641,
+      "sha256": "6715f80897995a00c5c50c81350ef7e6b4642437e96837dce49564379913a112",
+      "sourceCommit": "50eb5b8f83531e50d14d0d7eff899e65dd8b6baf",
+      "legacy": false,
+      "notes": [
+        "Added a separate In-app updates section with check, download progress, and user-triggered restart after download.",
+        "App Updates opens the download page for new Android APK builds. Automatic compatible downloads and next-cold-launch application remain enabled.",
+        "Android version 0.1.1, build 7; filename is a distribution label. Production OTA channel and fingerprint runtime match build 6."
+      ]
     }
   ]
 }
