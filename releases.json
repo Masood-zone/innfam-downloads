@@ -39,6 +39,26 @@
         "Added the public App Updates page, release history, and browser-based APK download action.",
         "Android version 0.1.0, build 3; the APK filename is a distribution label. Expo OTA updates are disabled in this build."
       ]
+    },
+    {
+      "id": "android-0.1.1-build.6",
+      "kind": "native",
+      "platform": "android",
+      "title": "iNNFam Android Early Access - build 6",
+      "version": "0.1.1",
+      "buildNumber": 6,
+      "tag": "android-0.1.1-build.6",
+      "publishedAt": "2026-10-07T06:33:32Z",
+      "apkUrl": "https://github.com/Masood-zone/innfam-downloads/releases/download/android-0.1.1-build.6/innfam-v1.1.1.apk",
+      "sizeBytes": 171346281,
+      "sha256": "75ddff7a9dd7eeb31aab8a92b6c2e550c3e78e1cbc38206e8c38d83523c8e754",
+      "sourceCommit": "172cd53b1e53a0cecd6164558dd4f4654dd118ba",
+      "legacy": false,
+      "notes": [
+        "Enabled compatible Expo OTA updates on the production channel with an Android fingerprint runtime.",
+        "Compatible downloaded updates can apply on a subsequent cold launch. The previous Updates screen remains embedded; its simplification is delivered separately through OTA.",
+        "Android version 0.1.1, build 6; innfam-v1.1.1.apk is a distribution filename. No additional native permissions were added."
+      ]
     }
   ]
 }
