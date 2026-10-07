@@ -19,6 +19,26 @@
         "Official Android early access build distributed by Gree Software Company.",
         "Released for testing and sustained everyday use. Features and behaviour may change as tester feedback is reviewed."
       ]
+    },
+    {
+      "id": "android-0.1.0-build.3",
+      "kind": "native",
+      "platform": "android",
+      "title": "iNNFam Android Early Access - build 3",
+      "version": "0.1.0",
+      "buildNumber": 3,
+      "tag": "android-0.1.0-build.3",
+      "publishedAt": "2026-10-07T04:50:05Z",
+      "apkUrl": "https://github.com/Masood-zone/innfam-downloads/releases/download/android-0.1.0-build.3/innfam-v1.1.apk",
+      "sizeBytes": 171345557,
+      "sha256": "db192042d5be84b0d40b68a6ef2819eb86b2d302435975f927675291279d7132",
+      "sourceCommit": "f1a865fa76d6541706e59604d970f4882e5f6c8c",
+      "legacy": false,
+      "notes": [
+        "Improved chat refresh and notification-to-chat handling.",
+        "Added the public App Updates page, release history, and browser-based APK download action.",
+        "Android version 0.1.0, build 3; the APK filename is a distribution label. Expo OTA updates are disabled in this build."
+      ]
     }
   ]
 }
