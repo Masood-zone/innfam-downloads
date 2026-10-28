@@ -79,6 +79,22 @@
         "App Updates opens the download page for new Android APK builds. Automatic compatible downloads and next-cold-launch application remain enabled.",
         "Android version 0.1.1, build 7; filename is a distribution label. Production OTA channel and fingerprint runtime match build 6."
       ]
+    },
+    {
+      "id": "android-0.1.1-ui-states-ota",
+      "kind": "ota",
+      "platform": "android",
+      "title": "Improved discovery and account screens",
+      "publishedAt": "2026-10-28T23:38:06Z",
+      "notes": [
+        "Stronger Home title and compact saved discovery location with confirmation and recovery controls.",
+        "Property filters now apply explicitly from a panel; closing it discards unapplied edits.",
+        "Clearer phone verification validation, sending and retry states, with keyboard toolbar clearance for forms."
+      ],
+      "sourceCommit": "40c3e36720aef6621e1948d41bdda318d076028a",
+      "updateId": "01a184e0-cad8-70e6-9319-ddfb68614e08",
+      "runtimeVersion": "0e85c533998a9f468a708083b5760297f0f1c731",
+      "channel": "production"
     }
   ]
 }
