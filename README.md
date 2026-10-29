@@ -4,14 +4,14 @@ Official early access downloads from **Gree Software Company**.
 
 ## Android early access
 
-- [Download innfam-v1.1-inapp.apk — latest Android build 7](https://github.com/Masood-zone/innfam-downloads/releases/download/android-0.1.1-build.7/innfam-v1.1-inapp.apk)
-- [Release notes and checksum](https://github.com/Masood-zone/innfam-downloads/releases/tag/android-0.1.1-build.7)
+- [Download innfam-v1.1.2.apk — latest Android build 8](https://github.com/Masood-zone/innfam-downloads/releases/download/android-0.1.1-build.8/innfam-v1.1.2.apk)
+- [Release notes and checksum](https://github.com/Masood-zone/innfam-downloads/releases/tag/android-0.1.1-build.8)
 
-The latest APK is **Android version `0.1.1`, build `7`**. The `v1.1-inapp` filename is a distribution label. App Updates opens the download page for new APK builds. A separate In-app updates section offers check, download with progress, and Restart iNNFam once an update is downloaded. Compatible improvements also download automatically and can apply on the next cold launch. Restart is always user-triggered.
+The latest APK is **Android version `0.1.1`, build `8`**. The `v1.1.2` filename is a distribution label. App Updates opens the download page for new APK builds. A separate In-app updates section offers check, download with progress, and Restart iNNFam once an update is downloaded. Compatible improvements also download automatically and can apply on the next cold launch. Restart is always user-triggered.
 
 This is an early access testing release for real-world use, repeated workflows, and tester-submitted usage reports. Features and behaviour may change.
 
-Previous releases: [build 6 release notes](https://github.com/Masood-zone/innfam-downloads/releases/tag/android-0.1.1-build.6) · [innfam-v1.1.1.apk](https://github.com/Masood-zone/innfam-downloads/releases/download/android-0.1.1-build.6/innfam-v1.1.1.apk) · [build 3 release notes](https://github.com/Masood-zone/innfam-downloads/releases/tag/android-0.1.0-build.3) · [innfam-v1.1.apk](https://github.com/Masood-zone/innfam-downloads/releases/download/android-0.1.0-build.3/innfam-v1.1.apk) · [v1 release notes](https://github.com/Masood-zone/innfam-downloads/releases/tag/v1-early-access) · [innfam-v1.apk](https://github.com/Masood-zone/innfam-downloads/releases/download/v1-early-access/innfam-v1.apk).
+Previous releases: [build 7 release notes](https://github.com/Masood-zone/innfam-downloads/releases/tag/android-0.1.1-build.7) · [innfam-v1.1-inapp.apk](https://github.com/Masood-zone/innfam-downloads/releases/download/android-0.1.1-build.7/innfam-v1.1-inapp.apk) · [build 6 release notes](https://github.com/Masood-zone/innfam-downloads/releases/tag/android-0.1.1-build.6) · [innfam-v1.1.1.apk](https://github.com/Masood-zone/innfam-downloads/releases/download/android-0.1.1-build.6/innfam-v1.1.1.apk) · [build 3 release notes](https://github.com/Masood-zone/innfam-downloads/releases/tag/android-0.1.0-build.3) · [innfam-v1.1.apk](https://github.com/Masood-zone/innfam-downloads/releases/download/android-0.1.0-build.3/innfam-v1.1.apk) · [v1 release notes](https://github.com/Masood-zone/innfam-downloads/releases/tag/v1-early-access) · [innfam-v1.apk](https://github.com/Masood-zone/innfam-downloads/releases/download/v1-early-access/innfam-v1.apk).
 
 ## Testing feedback
 
@@ -56,4 +56,10 @@ The catalogue supplies history and notes. Expo decides whether an OTA is compati
 4. Append the verified record to `releases.json`, validate it with the source app's `parseCatalogue` implementation, and compare native fields against the published asset/manifest. Commit and push this catalogue separately; verify the raw public URL loads.
 5. Record publication identifiers and actual acceptance evidence in the source release documentation. If a record is erroneous, correct it transparently in Git; do not replace a released APK or silently reuse a release ID for different code.
 
-Build 6 is the first OTA-enabled APK. Publishing this catalogue does not install an APK automatically. Original v1 installations predate the App Updates page; those users need the browser download link to install build 7.
+Build 6 is the first OTA-enabled APK. Publishing this catalogue does not install an APK automatically. Original v1 installations predate the App Updates page; those users need the browser download link to install build 8.
+
+## Build 8 and production OTA
+
+Build 8 ships the Home, discovery, filters, phone verification and keyboard improvements from [source 40c3e36](https://github.com/Masood-zone/innfam/commit/40c3e36720aef6621e1948d41bdda318d076028a), tagged [mobile-0.1.1-ui-states-source](https://github.com/Masood-zone/innfam/tree/mobile-0.1.1-ui-states-source). The supplied APK matches the finished EAS artifact byte-for-byte. Package: `com.innfam.innfam`; actual version `0.1.1`, build `8`; size 171348245 bytes; SHA-256 `d30d86ec946362835c3d557ca2e66c3bd36b7644c4f73dd3c58a345060e709d8`. The signer certificate identity matches build 7; full cryptographic signature verification was not performed. Runtime: `0e85c533998a9f468a708083b5760297f0f1c731`, production channel.
+
+A fresh production Android OTA was published on 2026-10-29, update ID `01a18500-6d45-7e5f-bc4c-afc05c0ccf08`, group `f9c01afc-eafb-4a40-bab6-8d90424d64a3`. This republishes the previously verified UI update. Phone installation/session retention, keyboard geometry, provider delivery and OTA arrival/restart remain unverified. Previous releases and catalogue records are preserved.

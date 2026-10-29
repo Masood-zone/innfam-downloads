@@ -95,6 +95,42 @@
       "updateId": "01a184e0-cad8-70e6-9319-ddfb68614e08",
       "runtimeVersion": "0e85c533998a9f468a708083b5760297f0f1c731",
       "channel": "production"
+    },
+    {
+      "id": "android-0.1.1-build.8",
+      "kind": "native",
+      "platform": "android",
+      "title": "iNNFam Android Early Access - build 8",
+      "version": "0.1.1",
+      "buildNumber": 8,
+      "tag": "android-0.1.1-build.8",
+      "publishedAt": "2026-10-29T00:21:19Z",
+      "apkUrl": "https://github.com/Masood-zone/innfam-downloads/releases/download/android-0.1.1-build.8/innfam-v1.1.2.apk",
+      "sizeBytes": 171348245,
+      "sha256": "d30d86ec946362835c3d557ca2e66c3bd36b7644c4f73dd3c58a345060e709d8",
+      "sourceCommit": "40c3e36720aef6621e1948d41bdda318d076028a",
+      "legacy": false,
+      "notes": [
+        "Stronger Home title and compact saved discovery location with explicit confirmation and recoverable save/clear actions.",
+        "Property filters use an Apply/Cancel panel with clearer loading, error and empty results.",
+        "Clearer phone verification validation, sending and retry states; form clearance accounts for the keyboard toolbar.",
+        "Actual Android version 0.1.1, build 8. The innfam-v1.1.2.apk filename is a distribution label. Production OTA runtime and signer certificate identity match build 7. Device acceptance remains unverified."
+      ]
+    },
+    {
+      "id": "android-0.1.1-build8-ui-ota",
+      "kind": "ota",
+      "platform": "android",
+      "title": "Build 8 discovery and account improvements",
+      "publishedAt": "2026-10-29T00:12:40Z",
+      "sourceCommit": "40c3e36720aef6621e1948d41bdda318d076028a",
+      "updateId": "01a18500-6d45-7e5f-bc4c-afc05c0ccf08",
+      "runtimeVersion": "0e85c533998a9f468a708083b5760297f0f1c731",
+      "channel": "production",
+      "notes": [
+        "Production republish of the verified UI states update: Home header, compact saved location, explicit filter Apply/Cancel, phone verification recovery and keyboard toolbar clearance.",
+        "Uses the same tested JavaScript and assets as the preceding UI update; no additional app features or native permissions were introduced."
+      ]
     }
   ]
 }
