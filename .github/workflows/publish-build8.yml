@@ -1,0 +1,60 @@
+name: Publish verified Android build 8
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/publish-build8.yml']
+permissions:
+  contents: write
+concurrency:
+  group: publish-innfam-android-build8
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Download and verify the exact supplied build
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/innfam-build8
+          cd /tmp/innfam-build8
+          curl --fail --location --retry 2 --connect-timeout 30 --max-time 600 'https://expo.dev/artifacts/eas/k7ZimLPis29IJGqwOU_Hn3uiFOHDXuQ592y3y94HXug.apk' --output innfam-v1.1.2.apk
+          printf '%s  %s\n' 'd30d86ec946362835c3d557ca2e66c3bd36b7644c4f73dd3c58a345060e709d8' 'innfam-v1.1.2.apk' > SHA256SUMS.txt
+          sha256sum --check SHA256SUMS.txt
+          test "$(stat -c%s innfam-v1.1.2.apk)" = '171348245'
+      - name: Publish immutable APK and checksum assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cat > /tmp/innfam-build8/NOTES.md <<'NOTES'
+          Improves the Home header, saved discovery location, property filter Apply/Cancel behavior, phone verification recovery, and form clearance above the keyboard toolbar.
+
+          Actual Android app version 0.1.1, build 8. The innfam-v1.1.2.apk filename is a distribution label. Package com.innfam.innfam; source 40c3e36720aef6621e1948d41bdda318d076028a (mobile-0.1.1-ui-states-source); production channel; runtime 0e85c533998a9f468a708083b5760297f0f1c731. Supplied APK matches the completed EAS artifact byte-for-byte; signer certificate identity matches build 7. Full cryptographic signature verification was not performed.
+
+          Validation passed: 47 unit tests, 306 component tests, mobile typecheck, production Android export and APK metadata/checksum. Physical device installation, session retention, keyboard geometry, OTA delivery/restart and live SMS/email remain unverified.
+
+          A fresh production Android OTA republishes the tested UI update: 01a18500-6d45-7e5f-bc4c-afc05c0ccf08 (group f9c01afc-eafb-4a40-bab6-8d90424d64a3). Earlier releases remain available.
+          NOTES
+          if ! gh release view android-0.1.1-build.8 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release create android-0.1.1-build.8 /tmp/innfam-build8/innfam-v1.1.2.apk /tmp/innfam-build8/SHA256SUMS.txt --repo "$GITHUB_REPOSITORY" --title 'iNNFam Android Early Access - build 8' --notes-file /tmp/innfam-build8/NOTES.md --prerelease
+          fi
+          gh api "repos/$GITHUB_REPOSITORY/releases/tags/android-0.1.1-build.8" > /tmp/build8-release.json
+      - name: Validate public assets and update catalogue and download page
+        run: node .github/scripts/publish_build8_runner.mjs
+      - name: Commit only the verified publication records
+        run: |
+          set -euo pipefail
+          git diff --check
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- README.md releases.json .release-evidence/android-0.1.1-build.8.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish verified Android build 8 and production OTA catalogue'
+            git push origin HEAD:main
+          fi
+          echo 'Build 8 APK, checksum, README and catalogue published and verified.' >> "$GITHUB_STEP_SUMMARY"
